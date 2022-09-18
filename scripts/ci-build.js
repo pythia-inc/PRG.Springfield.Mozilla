@@ -37,10 +37,10 @@ const getInput = (name) => {
       );
       const newPkg = {
         ...package,
-        name: 'wexond-nightly',
+        name: 'springfield',
         repository: {
           type: 'git',
-          url: 'git+https://github.com/wexond/desktop-nightly.git',
+          url: 'git+https://github.com/pythia-inc/springfield.git',
         },
       };
       await promises.writeFile(
@@ -50,8 +50,8 @@ const getInput = (name) => {
 
       const newEBConfig = {
         ...electronBuilder,
-        appId: 'org.wexond.wexond-nightly',
-        productName: 'Wexond Nightly',
+        appId: 'org.pythia.springfield-nightly',
+        productName: 'Springfield Nightly',
         directories: {
           output: 'dist',
           buildResources: 'static/nightly-icons',

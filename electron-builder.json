@@ -1,6 +1,6 @@
 {
-  "appId": "org.wexond.wexond",
-  "productName": "Wexond",
+  "appId": "org.pythia.springfield",
+  "productName": "Springfield",
   "nsis": {
     "include": "static/installer.nsh"
   },
@@ -44,7 +44,7 @@
   "fileAssociations": [
     {
       "name": "Document",
-      "description": "Wexond",
+      "description": "Springfield",
       "role": "Viewer",
       "ext": "html"
     }
