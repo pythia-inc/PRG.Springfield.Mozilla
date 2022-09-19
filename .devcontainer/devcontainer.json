@@ -24,6 +24,6 @@
 		"ruby": "latest",
 		"python": "latest",
 		"powershell": "latest",
-    "dotnet": "latest"
+                "dotnet": "latest"
 	}
 }
