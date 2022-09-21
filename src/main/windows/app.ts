@@ -28,7 +28,8 @@ export class AppWindow {
         plugins: true,
         // TODO: enable sandbox, contextIsolation and disable nodeIntegration to improve security
         nodeIntegration: true,
-        contextIsolation: false,
+        contextIsolation: true,
+        sandbox: true,
         javascript: true,
         // TODO: get rid of the remote module in renderers
         enableRemoteModule: true,

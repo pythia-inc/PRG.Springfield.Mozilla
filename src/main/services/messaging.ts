@@ -154,7 +154,7 @@ export const runMessagingService = (appWindow: AppWindow) => {
 
         if (item && item.type === 'password') {
           item.fields.password = await getPassword(
-            'wexond',
+            'springfield',
             `${hostname}-${item.fields.username}`,
           );
         }
@@ -220,7 +220,7 @@ export const runMessagingService = (appWindow: AppWindow) => {
         );
       }
 
-      await setPassword('wexond', `${hostname}-${username}`, password);
+      await setPassword('springfield', `${hostname}-${username}`, password);
 
       appWindow.send(`has-credentials-${view.id}`, true);
     });
@@ -236,7 +236,7 @@ export const runMessagingService = (appWindow: AppWindow) => {
         },
       });
 
-      await deletePassword('wexond', `${view.hostname}-${fields.username}`);
+      await deletePassword('springfield', `${view.hostname}-${fields.username}`);
 
       appWindow.viewManager.settingsView.webContents.send(
         'credentials-remove',
@@ -247,7 +247,7 @@ export const runMessagingService = (appWindow: AppWindow) => {
     ipcMain.on(
       'credentials-get-password',
       async (e, id: string, account: string) => {
-        const password = await getPassword('wexond', account);
+        const password = await getPassword('springfield', account);
         e.sender.send(id, password);
       },
     );
@@ -273,3 +273,11 @@ export const runMessagingService = (appWindow: AppWindow) => {
     },
   );
 };
+function getPassword(arg0: string, arg1: string): string | PromiseLike<string> {
+  throw new Error('Function not implemented.');
+}
+
+function deletePassword(arg0: string, arg1: string) {
+  throw new Error('Function not implemented.');
+}
+

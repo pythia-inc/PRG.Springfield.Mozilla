@@ -25,6 +25,7 @@
 		"powershell": "latest",
 		"dotnet": "latest",
 		"github-cli": "latest",
-		"fish": "latest"
+		"fish": "latest",
+		"desktop-lite": "latest"
 	}
 }
