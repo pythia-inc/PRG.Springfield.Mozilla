@@ -104,6 +104,7 @@
   },
   "dependencies": {
     "@seald-io/nedb": "^3.1.0",
-    "@withgraphite/graphite-cli": "^0.20.10"
+    "@withgraphite/graphite-cli": "^0.20.10",
+    "png2icns": "^0.0.1"
   }
 }
