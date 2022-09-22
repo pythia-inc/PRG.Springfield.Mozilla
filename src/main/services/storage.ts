@@ -1,7 +1,8 @@
 import { ipcMain, dialog } from 'electron';
-import * as Datastore from 'nedb';
 import { fromBuffer } from 'file-type';
 import * as icojs from 'icojs';
+
+const Datastore = require('@seald-io/nedb');
 
 import { getPath } from '~/utils';
 import {
@@ -21,7 +22,7 @@ import { requestURL } from '../network/request';
 import * as parse from 'node-bookmarks-parser';
 
 interface Databases {
-  [key: string]: Datastore;
+  [key: string]: typeof Datastore;
 }
 
 const convertIcoToPng = async (icoData: Buffer): Promise<ArrayBuffer> => {
