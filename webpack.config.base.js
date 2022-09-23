@@ -23,7 +23,7 @@ process.env = {
   ...BUILD_FLAGS,
 };
 
-const dev = process.env.DEV === '1';
+const dev = process.env.DEV === '0';
 
 process.env.NODE_ENV = dev ? 'development' : 'production';
 
