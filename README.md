@@ -4,6 +4,12 @@
 
 <div align="center">
   <h1>Springfield</h1>
+  
+<!-- Shield.io/GHA Buttons -->
+[![powered by Cliqz](https://img.shields.io/badge/cliqz-powered-blue?logo=cliqz)](https://github.com/cliqz-oss/adblocker)
+[![Build](https://github.com/pythia-inc/springfield/actions/workflows/build.yml/badge.svg)](https://github.com/pythia-inc/springfield/actions/workflows/build.yml)
+![GitHub](https://img.shields.io/github/license/pythia-inc/springfield?color=blue&logo=github&logoColor=teal)
+
 
 Springfield is a modern web browser, built on top of modern web technologies such as `Electron` and `React`, that can also be used as a framework to create a custom web browser.
 
