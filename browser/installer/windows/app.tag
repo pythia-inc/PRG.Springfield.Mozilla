@@ -1,4 +1,4 @@
 ;!@Install@!UTF-8!
-Title="Mozilla Firefox"
+Title="Pythia Springfield"
 RunProgram="setup.exe"
 ;!@InstallEnd@!

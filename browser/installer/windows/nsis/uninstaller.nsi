@@ -151,7 +151,7 @@ OutFile "helper.exe"
 !endif
 ShowUnInstDetails nevershow
 
-!define URLUninstallSurvey "https://qsurvey.mozilla.com/s3/FF-Desktop-Post-Uninstall?channel=${UpdateChannel}&version=${AppVersion}&osversion="
+!define URLUninstallSurvey ""
 
 ; Support for the profile refresh feature
 !define URLProfileRefreshHelp "https://support.mozilla.org/kb/refresh-firefox-reset-add-ons-and-settings"
@@ -438,8 +438,8 @@ Section "Uninstall"
   ${EndIf}
 
   SetShellVarContext current  ; Set SHCTX to HKCU
-  ${un.RegCleanMain} "Software\Mozilla"
-  ${un.RegCleanPrefs} "Software\Mozilla\${AppName}"
+  ${un.RegCleanMain} "Software\Pythia"
+  ${un.RegCleanPrefs} "Software\Pythia\${AppName}"
   ${un.RegCleanUninstall}
   ${un.DeleteShortcuts}
 
@@ -461,27 +461,27 @@ Section "Uninstall"
   ${EndIf}
 
   ; Remove the updates directory
-  ${un.CleanUpdateDirectories} "Mozilla\Firefox" "Mozilla\updates"
+  ${un.CleanUpdateDirectories} "Pythia\Firefox" "Pythia\updates"
 
   ; Remove any app model id's stored in the registry for this install path
-  DeleteRegValue HKCU "Software\Mozilla\${AppName}\TaskBarIDs" "$INSTDIR"
-  DeleteRegValue HKLM "Software\Mozilla\${AppName}\TaskBarIDs" "$INSTDIR"
+  DeleteRegValue HKCU "Software\Pythia\${AppName}\TaskBarIDs" "$INSTDIR"
+  DeleteRegValue HKLM "Software\Pythia\${AppName}\TaskBarIDs" "$INSTDIR"
 
   ClearErrors
-  WriteRegStr HKLM "Software\Mozilla" "${BrandShortName}InstallerTest" "Write Test"
+  WriteRegStr HKLM "Software\Pythia" "${BrandShortName}InstallerTest" "Write Test"
   ${If} ${Errors}
     StrCpy $TmpVal "HKCU" ; used primarily for logging
   ${Else}
     SetShellVarContext all  ; Set SHCTX to HKLM
-    DeleteRegValue HKLM "Software\Mozilla" "${BrandShortName}InstallerTest"
+    DeleteRegValue HKLM "Software\Pythia" "${BrandShortName}InstallerTest"
     StrCpy $TmpVal "HKLM" ; used primarily for logging
-    ${un.RegCleanMain} "Software\Mozilla"
+    ${un.RegCleanMain} "Software\Pythia"
     ${un.RegCleanUninstall}
     ${un.DeleteShortcuts}
     ${un.SetAppLSPCategories}
   ${EndIf}
 
-  ${un.RegCleanAppHandler} "FirefoxHTML-$AppUserModelID"
+  ${un.RegCleanAppHandler} "SpringfieldHTML-$AppUserModelID"
   ${un.RegCleanAppHandler} "FirefoxPDF-$AppUserModelID"
   ${un.RegCleanAppHandler} "FirefoxURL-$AppUserModelID"
   ${un.RegCleanProtocolHandler} "http"
