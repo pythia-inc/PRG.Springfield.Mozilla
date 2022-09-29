@@ -1,0 +1,19 @@
+<script>
+function onLoad() {
+  // For emulating the traditional behavior, collapse Selection to end of the
+  // <dd contenteditable> which is the last child of the <body>.
+  getSelection().collapse(
+    document.querySelector("dd[contenteditable]"),
+    document.querySelector("dd[contenteditable]").childNodes.length
+  );
+  document.execCommand("justifyFull");
+  document.execCommand("selectAll");
+  window.top.addEventListener("DOMNodeRemoved", () => {
+    document.execCommand("insertHTML", false, undefined)
+  });
+  document.execCommand("heading", false, "H1")
+}
+</script>
+<body onload="onLoad()">
+<dd contenteditable>A
+<!-- A -->

@@ -1,0 +1,18 @@
+<style>
+* { display: table-caption }
+body { display: contents }
+</style>
+<script>
+function onLoad() {
+  // For emulating the traditional behavior, collapse Selection to end of the
+  // <th> which is the deepest last child of the <body>.
+  getSelection().collapse(
+    document.querySelector("th"),
+    document.querySelector("th").childNodes.length
+  );
+  document.execCommand("enableInlineTableEditing");
+}
+</script>
+<body onload="onLoad()">
+<table contenteditable>
+<th>

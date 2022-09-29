@@ -1,0 +1,28 @@
+<script>
+function onError() {
+  document.querySelector("details").appendChild(
+    document.querySelector("p")
+  );
+  document.execCommand("indent");
+}
+
+function onLoadOfStyle() {
+  document.execCommand("delete");
+  document.querySelector("details").contentEditable = "true";
+  // For emulating the traditional behavior, collapse Selection to end of the
+  // <style>.
+  getSelection().collapse(
+    document.querySelector("style"),
+    document.querySelector("style").childNodes.length
+  );
+  document.querySelector("input").select();
+}
+</script>
+<video focus="false">
+<source onerror="onError()">
+</video>
+<details open>
+<p>
+<input contenteditable="false">
+<style onload="onLoadOfStyle()">
+<!-- x -->
